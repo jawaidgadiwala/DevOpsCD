@@ -8,7 +8,7 @@ var http = require('http');
 global.appEnv = function (name, def) {
     var val = undefined;
     if (process.env[name] === undefined) {
-        val == def;
+        val = def;
     }
     else {
         val = process.env[name];
@@ -22,6 +22,7 @@ global.appEnv = function (name, def) {
             val = false;
         }
     }
+
     return val;
 };
 
