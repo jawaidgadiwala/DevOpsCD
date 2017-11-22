@@ -2,17 +2,20 @@
   "name": "devopscd",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "pm2 start -n \"APP\" /var/app/current/server.js"
+    // "start": "pm2 start -n \"APP\" /var/app/current/server.js",
+    "start": "node ./node_modules/.bin/pm2 start server.js --name DevOpsCD",
+    "poststart":  "node ./node_modules/.bin/pm2 logs"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "mysql": "^2.15.0"
+    "mysql": "^2.15.0",
+    "pm2": "^2.7.2"
   }
 }
