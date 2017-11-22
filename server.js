@@ -26,8 +26,8 @@ global.appEnv = function (name, def) {
     return val;
 };
 
-http.createServer(app).listen(appEnv('HTTP_PORT', 8081), function () {
-    console.log("App server listening on port " + appEnv('HTTP_PORT', 8081));
+http.createServer(app).listen(appEnv('HTTP_PORT', 80), function () {
+    console.log("App server listening on port " + appEnv('HTTP_PORT', 80));
 });
 
 app.get('/', (req, res) => res.send('Hello World!'))
